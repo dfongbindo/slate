@@ -546,7 +546,18 @@ Remember — a happy kitten is an authenticated kitten!
 <p>Bind credit card (POST)</p>
 <h2 id='end-point'>End Point</h2>
 <p>https://</p>
-<h2 id='request-header'>Request Header</h2><h2 id='body'>Body</h2><h4 id='omsrequest'>OMSRequest</h4>
+<h2 id='request-header'>Request Header</h2><h2 id='body'>Body</h2><div class="highlight"><pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"transaction"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"credit_card"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+              </span><span class="nl">"card_exp_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"card_number"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"card_holder_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+          </span><span class="p">},</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre></div><h4 id='omsrequest'>OMSRequest</h4>
 <table><thead>
 <tr>
 <th>Name</th>
@@ -598,16 +609,7 @@ Remember — a happy kitten is an authenticated kitten!
 <td>Card holder name</td>
 </tr>
 </tbody></table>
-<div class="highlight"><pre class="highlight go tab-go"><code><span class="p">{</span>
-    <span class="s">"transaction"</span><span class="o">:</span> <span class="p">{</span>
-        <span class="s">"credit_card"</span><span class="o">:</span> <span class="p">{</span>
-            <span class="s">"card_exp_date"</span><span class="o">:</span> <span class="s">""</span><span class="p">,</span>
-            <span class="s">"card_number"</span><span class="o">:</span> <span class="s">""</span><span class="p">,</span>
-            <span class="s">"card_holder_name"</span><span class="o">:</span> <span class="s">""</span><span class="p">,</span>
-        <span class="p">},</span>
-    <span class="p">},</span>
-<span class="p">}</span>
-</code></pre></div><h2 id='success-response-data'>Success Response - data</h2>
+<h2 id='success-response-data'>Success Response - data</h2>
 <table><thead>
 <tr>
 <th>Name</th>
