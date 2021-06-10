@@ -247,6 +247,20 @@ https://
 ## Request Header
 
 ## Body
+
+```json
+[
+  {
+      "transaction": {
+          "credit_card": {
+              "card_exp_date": "",
+              "card_number": "",
+              "card_holder_name": "",
+          },
+      },
+  },
+]
+```
 #### OMSRequest
 | Name | Type | Description |
 | ------ | ------ | ------ |
@@ -264,17 +278,6 @@ https://
 | card_number | `string` | Card number |
 | card_holder_name | `string` | Card holder name |
 
-```go
-{
-    "transaction": {
-        "credit_card": {
-            "card_exp_date": "",
-            "card_number": "",
-            "card_holder_name": "",
-        },
-    },
-}
-```
 
 ## Success Response - data
 | Name | Type | Description |
