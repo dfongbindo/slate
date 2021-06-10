@@ -332,6 +332,26 @@
               </ul>
           </li>
           <li>
+            <a href="#bind-credit-card" class="toc-h1 toc-link" data-title="Bind Credit Card">Bind Credit Card</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#end-point" class="toc-h2 toc-link" data-title="End Point">End Point</a>
+                  </li>
+                  <li>
+                    <a href="#request-header" class="toc-h2 toc-link" data-title="Request Header">Request Header</a>
+                  </li>
+                  <li>
+                    <a href="#body" class="toc-h2 toc-link" data-title="Body">Body</a>
+                  </li>
+                  <li>
+                    <a href="#success-response-data" class="toc-h2 toc-link" data-title="Success Response - data">Success Response - data</a>
+                  </li>
+                  <li>
+                    <a href="#error-response-data" class="toc-h2 toc-link" data-title="Error Response - data">Error Response - data</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
             <a href="#errors" class="toc-h1 toc-link" data-title="Errors">Errors</a>
           </li>
       </ul>
@@ -520,6 +540,216 @@ Remember — a happy kitten is an authenticated kitten!
 <tr>
 <td>ID</td>
 <td>The ID of the kitten to delete</td>
+</tr>
+</tbody></table>
+<h1 id='bind-credit-card'>Bind Credit Card</h1>
+<p>Bind credit card (POST)</p>
+<h2 id='end-point'>End Point</h2>
+<p>https://</p>
+<h2 id='request-header'>Request Header</h2><h2 id='body'>Body</h2><h4 id='omsrequest'>OMSRequest</h4>
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>transaction</td>
+<td><code>object</code></td>
+<td>transaction object refer to OMSTransaction</td>
+</tr>
+</tbody></table>
+<h4 id='omstransaction'>OMSTransaction</h4>
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>credit_card</td>
+<td><code>object</code></td>
+<td>credit_card object refer to OMSTransactionCreditCard</td>
+</tr>
+</tbody></table>
+<h4 id='omstransactioncreditcard'>OMSTransactionCreditCard</h4>
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>card_exp_date</td>
+<td><code>string</code></td>
+<td>Card expiry date</td>
+</tr>
+<tr>
+<td>card_number</td>
+<td><code>string</code></td>
+<td>Card number</td>
+</tr>
+<tr>
+<td>card_holder_name</td>
+<td><code>string</code></td>
+<td>Card holder name</td>
+</tr>
+</tbody></table>
+<div class="highlight"><pre class="highlight go tab-go"><code><span class="p">{</span>
+    <span class="s">"transaction"</span><span class="o">:</span> <span class="p">{</span>
+        <span class="s">"credit_card"</span><span class="o">:</span> <span class="p">{</span>
+            <span class="s">"card_exp_date"</span><span class="o">:</span> <span class="s">""</span><span class="p">,</span>
+            <span class="s">"card_number"</span><span class="o">:</span> <span class="s">""</span><span class="p">,</span>
+            <span class="s">"card_holder_name"</span><span class="o">:</span> <span class="s">""</span><span class="p">,</span>
+        <span class="p">},</span>
+    <span class="p">},</span>
+<span class="p">}</span>
+</code></pre></div><h2 id='success-response-data'>Success Response - data</h2>
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>transaction</td>
+<td><code>object</code></td>
+<td>transaction object refer to OMSTransaction</td>
+</tr>
+</tbody></table>
+<h4 id='omstransaction-2'>OMSTransaction</h4>
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>uuid</td>
+<td><code>string</code></td>
+<td>UUID</td>
+</tr>
+<tr>
+<td>credit_card_token</td>
+<td><code>object</code></td>
+<td>credit_card_token object refer to CreditCardToken</td>
+</tr>
+<tr>
+<td>transaction_state</td>
+<td><code>string</code></td>
+<td>&quot;success&quot;</td>
+</tr>
+<tr>
+<td>acquirer_type</td>
+<td><code>string</code></td>
+<td>Card acquirer</td>
+</tr>
+</tbody></table>
+<h4 id='creditcardtoken'>CreditCardToken</h4>
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>token</td>
+<td><code>string</code></td>
+<td></td>
+</tr>
+</tbody></table>
+<div class="highlight"><pre class="highlight go tab-go"><code><span class="p">{</span>
+    <span class="s">"transaction"</span><span class="o">:</span> <span class="p">{</span>
+        <span class="s">"uuid"</span><span class="o">:</span> <span class="s">""</span><span class="p">,</span>
+        <span class="s">"credit_card_token"</span><span class="o">:</span> <span class="p">{</span>
+            <span class="s">"token"</span><span class="o">:</span> <span class="s">""</span><span class="p">,</span>
+        <span class="p">},</span>
+        <span class="s">"transaction_state"</span><span class="o">:</span> <span class="s">"success"</span><span class="p">,</span>
+        <span class="s">"acquirer_type"</span><span class="o">:</span> <span class="s">""</span><span class="p">,</span>
+    <span class="p">},</span>
+<span class="p">}</span>
+</code></pre></div><h2 id='error-response-data'>Error Response - data</h2>
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>transaction</td>
+<td><code>object</code></td>
+<td>OMSTransaction</td>
+</tr>
+</tbody></table>
+<h4 id='omstransaction-3'>OMSTransaction</h4>
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>error_code</td>
+<td><code>string</code></td>
+<td></td>
+</tr>
+<tr>
+<td>error_desc</td>
+<td><code>string</code></td>
+<td></td>
+</tr>
+</tbody></table>
+<div class="highlight"><pre class="highlight go tab-go"><code><span class="p">{</span>
+    <span class="s">"transaction"</span><span class="o">:</span> <span class="p">{</span>
+        <span class="s">"error_code"</span><span class="o">:</span> <span class="s">""</span><span class="p">,</span>
+        <span class="s">"error_desc"</span><span class="o">:</span> <span class="s">""</span><span class="p">,</span>
+    <span class="p">},</span>
+<span class="p">}</span>
+</code></pre></div><h4 id='possible-error-response'>Possible Error Response</h4>
+<table><thead>
+<tr>
+<th>error_code</th>
+<th>error_desc</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>100400</td>
+<td>request parameter error</td>
+<td></td>
+</tr>
+<tr>
+<td>100400</td>
+<td>transaction can&#39;t not be empty</td>
+<td>No Transaction</td>
+</tr>
+<tr>
+<td>100400</td>
+<td>creditCard can&#39;t not be empty</td>
+<td>Credit Card Number Error</td>
+</tr>
+<tr>
+<td>100400</td>
+<td>uuid can&#39;t not be empty</td>
+<td></td>
+</tr>
+<tr>
+<td>100400</td>
+<td>card expData invalid</td>
+<td>Card Expiry Date Error</td>
+</tr>
+<tr>
+<td>100400</td>
+<td>bind card fail</td>
+<td></td>
 </tr>
 </tbody></table>
 <h1 id='errors'>Errors</h1>
